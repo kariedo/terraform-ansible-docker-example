@@ -2,7 +2,7 @@
 ### What is this ?
 Quick example how to setup Docker droplet at DigitalOcean with terraform and ansible.
 
-More details in the [blog post](https://stas.starikevich/posts/wiring-terraform-and-ansible/)
+More details in the [blog post](https://stas.starikevich.com/posts/wiring-terraform-and-ansible/).
 
 ### How to start
 
