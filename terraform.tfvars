@@ -1,0 +1,6 @@
+image="centos-7-x64"
+size="s-1vcpu-1gb"
+region="nyc1"
+ssh_fingerprint="ed:e0:be:1e:27:24:2c:7a:d0:8e:e3:8f:a9:a4:2d:94"
+do-ssh-key="~/.ssh/id_rsa"
+home_ipv4_addr="1.2.3.4/32"

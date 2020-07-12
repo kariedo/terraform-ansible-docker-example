@@ -1,0 +1,37 @@
+- hosts: all
+  become: true
+
+  tasks:
+    - name: "Installing Docker Prerequisite packages"
+      yum:
+        name: ['yum-utils', 'device-mapper-persistent-data', 'lvm2']
+        state: latest
+
+    - name: Add Docker repo
+      get_url:
+        url: https://download.docker.com/linux/centos/docker-ce.repo
+        dest: /etc/yum.repos.d/docer-ce.repo
+        mode: 0644
+
+    - name: Enable Docker Edge repo
+      ini_file:
+        dest: /etc/yum.repos.d/docer-ce.repo
+        section: 'docker-ce-edge'
+        option: enabled
+
+    - name: Install Docker
+      package:
+        name: docker-ce
+        state: latest
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Install docker-compose
+      get_url: 
+        url : https://github.com/docker/compose/releases/download/1.26.2/docker-compose-Linux-x86_64
+        dest: /bin/docker-compose
+        mode: 'u+x,g+x'

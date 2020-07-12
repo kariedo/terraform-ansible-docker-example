@@ -1,0 +1,5 @@
+export_token.sh
+.terraform
+*.tfstate*
+.terraform.tfstate.lock.info
+ansible/tasks/docker.retry
